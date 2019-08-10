@@ -1,0 +1,44 @@
+{    
+    "latex-workshop.latex.tools": [
+        {
+            "command": "platex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "name": "Step 1: platex"
+        },
+        {
+            "command": "platex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "name": "Step 2: platex"
+        },
+        {
+            "command": "dvipdfmx",
+            "args": [
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "name": "Step 3: dvipdfmx"
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "toolchain",
+            "tools": [
+                "Step 1: platex",
+                "Step 2: platex",
+                "Step 3: dvipdfmx"
+            ]
+        }
+    ],
+    "latex-workshop.view.pdf.viewer": "tab"
+}
